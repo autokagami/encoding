@@ -1146,7 +1146,7 @@ dictionary TextDecodeOptions {
 [Constructor(optional DOMString label = "utf-8", optional TextDecoderOptions options = {}),
  Exposed=(Window,Worker)]
 interface TextDecoder {
-  USVString decode(optional BufferSource input, optional TextDecodeOptions options = {});
+  USVString decode(optional [AllowShared] BufferSource input, optional TextDecodeOptions options = {});
 };
 TextDecoder includes TextDecoderCommon;
 </pre>
@@ -1301,7 +1301,7 @@ dictionary TextEncoderEncodeIntoResult {
  Exposed=(Window,Worker)]
 interface TextEncoder {
   [NewObject] Uint8Array encode(optional USVString input = "");
-  TextEncoderEncodeIntoResult encodeInto(USVString source, Uint8Array destination);
+  TextEncoderEncodeIntoResult encodeInto(USVString source, [AllowShared] Uint8Array destination);
 };
 TextEncoder includes TextEncoderCommon;
 </pre>
